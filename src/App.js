@@ -9,13 +9,13 @@ import PeopleTable from './components/PeopleTable'
  * [] - base pagination
  *  [] - сделать просто вывод 10 страниц по 3 элемента
  *    [] - компонент pagination
- *      [] - состояния
- *      [] - реализовать отображение по страницам по 5 для начала статику
- *             кол-во страниц: (кол-во эл / кол-во отображ).выделить_целое_к-потолку
- *             диапозон элементов: person.index >= state.index from && state index to <= state.index
- *             передавать будем в отрисовку только подходящий промежуток
+ *      [x] - состояния
+ *      [x] - реализовать отображение по страницам по 5 для начала статику
+ *         [x] кол-во страниц: (кол-во эл / кол-во отображ).выделить_целое_к-потолку
+ *         [x] диапозон элементов
+ *         [x] передавать будем в отрисовку только подходящий промежуток
  *  [x] - немного css стилей
- *  [] - привязать стили
+ *  [] - привязать стили к пагинации
  */
 
 class App extends React.Component {
@@ -63,13 +63,14 @@ class App extends React.Component {
       perPage,
       pages,
     } = this.state;
-    console.log(people);
-    console.log(pages);
 
     return (
       <div className="App">
         <PeopleTable 
           people={people}
+          perPage={perPage}
+          page={page}
+          perPage={perPage}
         />
         {/* <Pagination /> */}
       </div>
