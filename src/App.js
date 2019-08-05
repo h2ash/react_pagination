@@ -10,6 +10,7 @@ import PeopleTable from './components/PeopleTable'
  *  [] - сделать просто вывод 10 страниц по 3 элемента
  *    [] - компонент pagination
  *      [] - состояния
+ *      [] - немного css стилей
  *  [] - привязать стили
  */
 
