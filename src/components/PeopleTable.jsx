@@ -2,7 +2,11 @@ import React from 'react'
 import Person from './Person'
 
 const PeopleTable = ({
-  peopleWithOtherColumns
+  people,
+  sumOfPeople,
+  page,
+  perPage,
+  pages,
 }) => (
   <table>
     <thead>
@@ -16,7 +20,7 @@ const PeopleTable = ({
     </thead>
     <tbody>
       {
-        peopleWithOtherColumns.map(person => (
+        people.map(person => (
           <Person 
             person={person}
             key={person.id}

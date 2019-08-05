@@ -10,19 +10,25 @@ import PeopleTable from './components/PeopleTable'
  *  [] - сделать просто вывод 10 страниц по 3 элемента
  *    [] - компонент pagination
  *      [] - состояния
- *      [] - немного css стилей
+ *      [] - реализовать отображение по страницам по 5 для начала статику
+ *             кол-во страниц: (кол-во эл / кол-во отображ).выделить_целое_к-потолку
+ *             диапозон элементов: person.index >= state.index from && state index to <= state.index
+ *             передавать будем в отрисовку только подходящий промежуток
+ *  [x] - немного css стилей
  *  [] - привязать стили
  */
 
 class App extends React.Component {
   state = {
     people: [],
-    sumOfPeople: '',
-    peopleWithOtherColumns: [],
+    sumOfPeople: 0,
+    page: 1,
+    perPage: 5,
+    pages: '',
   }
 
   componentDidMount = () => {
-    this.loadData()
+    this.loadData();
   }
 
   loadData = async () => {
@@ -36,22 +42,34 @@ class App extends React.Component {
     }))
 
     this.setState({
-      peopleWithOtherColumns: peopleWithOtherColumns,
+      people: peopleWithOtherColumns,
       sumOfPeople: peopleWithOtherColumns.length,
     })
+
+    this.sumOfPages();
+  }
+
+  sumOfPages = () => {
+    this.setState(prevState => ({
+      pages: Math.ceil(prevState.sumOfPeople / prevState.perPage),
+    }))
   }
 
   render() {
     const { 
-      peopleWithOtherColumns,
+      people,
       sumOfPeople,
+      page,
+      perPage,
+      pages,
     } = this.state;
-    console.log(sumOfPeople);
+    console.log(people);
+    console.log(pages);
 
     return (
       <div className="App">
         <PeopleTable 
-          peopleWithOtherColumns={peopleWithOtherColumns}
+          people={people}
         />
         {/* <Pagination /> */}
       </div>
