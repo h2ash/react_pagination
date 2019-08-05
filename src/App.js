@@ -1,22 +1,58 @@
 import React from 'react';
 import './App.css';
+import PeopleTable from './components/PeopleTable'
+
+/***
+ * [x] - выбрать API
+ * [x] - подготовить вывод всей таблицы
+ *    [x] - заголовки 
+ * [] - base pagination
+ *  [] - сделать просто вывод 10 страниц по 3 элемента
+ *    [] - компонент pagination
+ *      [] - состояния
+ *  [] - привязать стили
+ */
 
 class App extends React.Component {
   state = {
-    tabs: [
-      { title: 'Tab 1', content: 'Some text 1' },
-      { title: 'Tab 2', content: 'Some text 2' },
-      { title: 'Tab 3', content: 'Some text 3' },
-    ],
-  };
+    people: [],
+    sumOfPeople: '',
+    peopleWithOtherColumns: [],
+  }
+
+  componentDidMount = () => {
+    this.loadData()
+  }
+
+  loadData = async () => {
+    const responsePeople = await
+      fetch('https://mate-academy.github.io/react_people-table/api/people.json');
+    const people = await responsePeople.json();
+
+    const peopleWithOtherColumns = people.map((person, index) => ({
+      ...person,
+      id: index + 1,
+    }))
+
+    this.setState({
+      peopleWithOtherColumns: peopleWithOtherColumns,
+      sumOfPeople: peopleWithOtherColumns.length,
+    })
+  }
 
   render() {
-    const { tabs } = this.state;
+    const { 
+      peopleWithOtherColumns,
+      sumOfPeople,
+    } = this.state;
+    console.log(sumOfPeople);
 
     return (
       <div className="App">
-        {/* eslint-disable-next-line */}
-        <h1>{tabs.length} tabs</h1>
+        <PeopleTable 
+          peopleWithOtherColumns={peopleWithOtherColumns}
+        />
+        {/* <Pagination /> */}
       </div>
     );
   }
