@@ -109,7 +109,6 @@ class App extends React.Component {
     const { 
       people,
       sumOfPeople,
-      pages,
       page,
       perPage,
       arrOfPages,

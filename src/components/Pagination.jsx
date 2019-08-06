@@ -8,7 +8,7 @@ const Pagination = ({ arrOfPages, choosePage, page }) => {
           <a 
             onClick={() => choosePage(page - 1)}
             className="page-link"
-            href="#"
+            href="/#"
           >
             Previous
           </a>
@@ -21,7 +21,7 @@ const Pagination = ({ arrOfPages, choosePage, page }) => {
               <a 
                 onClick={() => choosePage(button)}
                 className="page-link" 
-                href="#"
+                href="/#"
               >{button}</a>
             </li>
           ))
@@ -31,7 +31,7 @@ const Pagination = ({ arrOfPages, choosePage, page }) => {
           <a 
             onClick={() => choosePage(page + 1)}
             className="page-link" 
-            href="#"
+            href="/#"
           >
             Next
           </a>
