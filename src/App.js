@@ -5,33 +5,6 @@ import Pagination from './components/Pagination'
 import OutputBy from './components/OutputBy'
 import WithIfno from './components/WithInfo'
 
-/***
- * [x] - выбрать API
- * [x] - подготовить вывод всей таблицы
- *    [x] - заголовки 
- * [x] - base pagination
- *  [x] - сделать просто вывод страниц по 5 элементов
- *    [x] - компонент pagination
- *      [x] - disabled добавить для кнопок
- *      [x] - css active
- *      [x] - active page func
- *      [-] - может вынести arrOfPages вообще в pagination?
- *      [x] - передать pages, отобразить через map
- *      [x] - состояния
- *      [x] - реализовать отображение по страницам по 5 для начала статику
- *         [x] кол-во страниц: (кол-во эл / кол-во отображ).выделить_целое_к-потолку
- *         [x] диапозон элементов
- *         [x] передавать будем в отрисовку только подходящий промежуток
- *  [x] - немного css стилей
- *  [x] - bootstrap пагинации
- *  [x] - css для пагинации от бутстрап
- *  [x] - add WithInfo component
- *  [x] - css WithInfo
- *  [x] - сделать ввод данных из выпадающего списка
- *    [x] - пофиксить изменение количества страниц
- *  [] - поправить прыгающие стили
- */
-
 class App extends React.Component {
   state = {
     people: [],
