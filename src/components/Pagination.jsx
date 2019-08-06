@@ -3,11 +3,11 @@ import React from 'react'
 const Pagination = ({ arrOfPages, choosePage, page }) => {
   return (
     <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class={`page-item ${page < 2 ? 'disabled' : ''}`}>
+      <ul className="pagination">
+        <li className={`page-item ${page < 2 ? 'disabled' : ''}`}>
           <a 
             onClick={() => choosePage(page - 1)}
-            class="page-link"
+            className="page-link"
             href="#"
           >
             Previous
@@ -17,20 +17,20 @@ const Pagination = ({ arrOfPages, choosePage, page }) => {
         {
           arrOfPages.map(button => (
             <li 
-              class={`page-item ${page === button ? 'active' : ''}`}>
+              className={`page-item ${page === button ? 'active' : ''}`}>
               <a 
                 onClick={() => choosePage(button)}
-                class="page-link" 
+                className="page-link" 
                 href="#"
               >{button}</a>
             </li>
           ))
         }
 
-        <li class={`page-item ${page === arrOfPages.length ? 'disabled' : ''}`}>
+        <li className={`page-item ${page === arrOfPages.length ? 'disabled' : ''}`}>
           <a 
             onClick={() => choosePage(page + 1)}
-            class="page-link" 
+            className="page-link" 
             href="#"
           >
             Next

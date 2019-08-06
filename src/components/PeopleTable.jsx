@@ -14,7 +14,7 @@ class PeopleTable extends React.Component {
     const endPageItem = (perPage * page);
 
     return (
-      <table>
+      <table className='table table-hover'>
         <thead>
           <tr>
             <th>id</th>

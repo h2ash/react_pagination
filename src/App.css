@@ -3,27 +3,12 @@
   justify-content: center;
 }
 
-table {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-  font-size: 14px;
-  background: white;
-  border-collapse: collapse;
-  text-align: left;
+.withInfo {
+  display: grid;
+  justify-self: center;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: -5px;
+  width: 35%;
+  height: 60%;
 }
-
-th {
-  font-weight: normal;
-  color: #039;
-  border-bottom: 2px solid #6678b1;
-  padding: 10px 8px;
-}
-
-td {
-  color: #669;
-  padding: 9px 8px;
-  transition: .3s linear;
-  border-bottom: 1px solid #ccc;
-  padding: 9px 8px;
-  transition: .3s linear;
-}
-tr:hover td {background: #e8edff;}

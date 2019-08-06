@@ -2,14 +2,16 @@ import React from 'react';
 import './App.css';
 import PeopleTable from './components/PeopleTable'
 import Pagination from './components/Pagination'
+import OutputBy from './components/OutputBy'
+import WithIfno from './components/WithInfo'
 
 /***
  * [x] - выбрать API
  * [x] - подготовить вывод всей таблицы
  *    [x] - заголовки 
- * [] - base pagination
- *  [] - сделать просто вывод 10 страниц по 3 элемента
- *    [] - компонент pagination
+ * [x] - base pagination
+ *  [x] - сделать просто вывод страниц по 5 элементов
+ *    [x] - компонент pagination
  *      [x] - disabled добавить для кнопок
  *      [x] - css active
  *      [x] - active page func
@@ -22,6 +24,10 @@ import Pagination from './components/Pagination'
  *         [x] передавать будем в отрисовку только подходящий промежуток
  *  [x] - немного css стилей
  *  [x] - bootstrap пагинации
+ *  [x] - css для пагинации от бутстрап
+ *  [x] - add WithInfo component
+ *  [x] - css WithInfo
+ *  [] - сделать ввод данных из выпадающего списка
  */
 
 class App extends React.Component {
@@ -31,7 +37,7 @@ class App extends React.Component {
     sumOfPeople: 0,
     page: 3,
     perPage: 5,
-    pages: 0,
+    pages: 1,
   }
 
   componentDidMount = () => {
@@ -87,6 +93,7 @@ class App extends React.Component {
     const { 
       people,
       sumOfPeople,
+      pages,
       page,
       perPage,
       arrOfPages,
@@ -94,10 +101,17 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <OutputBy 
+        />
         <PeopleTable 
           people={people}
           page={page}
           perPage={perPage}
+        />
+        <WithIfno
+          page={page}
+          perPage={perPage} 
+          sumOfPeople={sumOfPeople}
         />
         <Pagination
           page={page}

@@ -5,7 +5,7 @@ const Person = ({ person, key }) => {
 
   return (
     <tr key={key}>
-      <td>{person.id}</td>
+      <th scope='row'>{person.id}</th>
       <td>{person.name}</td>
       <td>{person.sex}</td>
       <td>{person.born}</td>
