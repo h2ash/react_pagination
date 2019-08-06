@@ -10,7 +10,7 @@ class App extends React.Component {
     people: [],
     arrOfPages: [],
     sumOfPeople: 0,
-    page: 3,
+    page: 1,
     perPage: 5,
     pages: 1,
   }
