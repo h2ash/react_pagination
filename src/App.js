@@ -27,7 +27,9 @@ import WithIfno from './components/WithInfo'
  *  [x] - css для пагинации от бутстрап
  *  [x] - add WithInfo component
  *  [x] - css WithInfo
- *  [] - сделать ввод данных из выпадающего списка
+ *  [x] - сделать ввод данных из выпадающего списка
+ *    [x] - пофиксить изменение количества страниц
+ *  [] - поправить прыгающие стили
  */
 
 class App extends React.Component {
@@ -89,6 +91,20 @@ class App extends React.Component {
     })
   }
 
+  onPerPageChange = (event) => {
+    const {value} = event.target;
+
+    this.setState({
+      perPage: value,
+    })
+
+    this.sumOfPages();
+
+    this.setState({
+      page: 1,
+    })
+  }
+
   render() {
     const { 
       people,
@@ -101,7 +117,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <OutputBy 
+        <OutputBy
+          onPerPageChange={this.onPerPageChange}
         />
         <PeopleTable 
           people={people}

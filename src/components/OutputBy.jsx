@@ -1,12 +1,18 @@
 import React from 'react'
 
-const OutputBy = () => (
+const OutputBy = ({onPerPageChange}) => (
   <div className="form-group">
-    <label htmlFor="exampleFormControlSelect1">Example select</label>
-      <select className="form-control" id="exampleFormControlSelect1">
-        <option>3</option>
-        <option>5</option>
-        <option>10</option>
+    <label htmlFor='selectItemsPerPage'>
+      Choose item per page: </label>
+      <select 
+        className="form-control"
+        onChange={onPerPageChange}
+        id='selectItemsPerPage'
+        >
+        <option value='3'>3</option>
+        <option selected value='5'>5</option>
+        <option value='10'>10</option>
+        <option value='20'>20</option>
       </select>
   </div>
 )

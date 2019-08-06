@@ -3,12 +3,30 @@
   justify-content: center;
 }
 
+.table {
+  width: 400px;
+}
+
+.table__th-person-id {
+  width: 50px;
+}
+
+.table__td-person-name {
+  width: 250px;
+}
+
+.pagination {
+  display: grid;
+  justify-content: center;
+  width: 600px;
+}
+
 .withInfo {
   display: grid;
   justify-self: center;
   justify-content: center;
   align-content: center;
   margin-bottom: -5px;
-  width: 35%;
+  width: 150px;
   height: 60%;
 }
