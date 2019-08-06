@@ -10,7 +10,9 @@ import Pagination from './components/Pagination'
  * [] - base pagination
  *  [] - сделать просто вывод 10 страниц по 3 элемента
  *    [] - компонент pagination
- *      [] - active page func
+ *      [x] - disabled добавить для кнопок
+ *      [x] - css active
+ *      [x] - active page func
  *      [-] - может вынести arrOfPages вообще в pagination?
  *      [x] - передать pages, отобразить через map
  *      [x] - состояния
@@ -98,6 +100,7 @@ class App extends React.Component {
           perPage={perPage}
         />
         <Pagination
+          page={page}
           arrOfPages={arrOfPages}
           choosePage={this.choosePage}
         />
