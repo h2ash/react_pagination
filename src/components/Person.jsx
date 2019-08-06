@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Person = ({person, key}) => {
+const Person = ({ person, key }) => {
 
 
   return (

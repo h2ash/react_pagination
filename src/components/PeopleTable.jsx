@@ -13,8 +13,6 @@ class PeopleTable extends React.Component {
     const startPageItem = page === 1 ? 1 : ((page - 1) * perPage) + 1;
     const endPageItem = (perPage * page);
 
-    console.log(startPageItem);
-
     return (
       <table>
         <thead>
@@ -29,14 +27,14 @@ class PeopleTable extends React.Component {
         <tbody>
           {
             people
-            .filter(person => 
-              person.id >= startPageItem && person.id <= endPageItem)
-            .map(person => (
-              <Person 
-                person={person}
-                key={person.id}
-              />
-            ))
+              .filter(person =>
+                person.id >= startPageItem && person.id <= endPageItem)
+              .map(person => (
+                <Person
+                  person={person}
+                  key={person.id}
+                />
+              ))
           }
         </tbody>
       </table>
